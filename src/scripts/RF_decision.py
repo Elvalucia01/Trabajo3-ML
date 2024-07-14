@@ -28,6 +28,7 @@ def load():
     # Convertir etiquetas de clase a números
     le = LabelEncoder()
     data['class'] = le.fit_transform(data['class'])
+    X = data.drop('class', axis=1)
     y = data['class']
 
     # Balancear el dataset usando SMOTE
